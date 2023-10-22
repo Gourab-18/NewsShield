@@ -1,9 +1,13 @@
-
-
+import { Navbar } from "./components/Navbar";
+import { LandingPage } from "./pages/LandingPage";
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <div className="min-w-screen min-h-[100vh] bg-[#000000]">
+        <Navbar />
+
+        <LandingPage />
+      </div>
     </>
   );
 }
