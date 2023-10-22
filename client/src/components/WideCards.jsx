@@ -15,7 +15,7 @@ export const WideCards = () => {
             type="submit"
             className=" w-[100%]  rounded-sm  bg-purple-700 px-4  py-2 text-center text-sm  font-medium uppercase text-white hover:bg-purple-800 hover:opacity-80"
           >
-            Connect Wallet
+            Approve
           </button>
         </div>
       </div>
