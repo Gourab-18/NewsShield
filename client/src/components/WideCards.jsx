@@ -1,6 +1,6 @@
 import React from "react";
 
-export const WideCards = () => {
+export const WideCards = ({content}) => {
   return (
     <>
       <div className="h-[40 vh] flex w-[40vw] flex-col     bg-[#111111]  ">
@@ -15,7 +15,7 @@ export const WideCards = () => {
             type="submit"
             className=" w-[100%]  rounded-sm  bg-purple-700 px-4  py-2 text-center text-sm  font-medium uppercase text-white hover:bg-purple-800 hover:opacity-80"
           >
-            Approve
+            {content}
           </button>
         </div>
       </div>

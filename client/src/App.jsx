@@ -7,7 +7,7 @@ function App() {
       <div className="min-w-screen min-h-[100vh] bg-[#000000]">
         <Navbar />
 
-        {/* <LandingPage /> */}
+        <LandingPage />
         <Participation />
       </div>
     </>
