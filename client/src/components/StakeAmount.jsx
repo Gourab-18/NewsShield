@@ -4,7 +4,7 @@ export const StakeAmount = () => {
   return (
     <div className="my-6 flex h-[80vh] w-[40vw] flex-col items-center gap-4 border-[0.2px] border-dotted border-pink-200	 py-4 shadow-lg">
       {/* <div > */}
-      <div className=" 	font-small text-2xl text-white	">Tweet ID:123456</div>
+      <div className=" 	font-small text-2xl text-white	">News ID:123456</div>
 
       <div className="w-[90%]">
         <img

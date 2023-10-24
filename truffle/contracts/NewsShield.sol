@@ -2,11 +2,7 @@
 pragma solidity ^0.8.0;
 
 contract NewsShield {
-    // news approved for voting
-    struct News {
-        string link;
-        string id;
-    }
+  
     struct ApprovedNews {
         string link;
         string id;
@@ -19,7 +15,6 @@ contract NewsShield {
     }
 
     enum VotingStatusOfApprovedNews {
-        VotingNotStarted,
         VotingStarted,
         VotingOver
     }
@@ -34,7 +29,7 @@ contract NewsShield {
     }
 
     // news will be referred by unique id so it can be used as key in map
-    mapping(string => ApprovedNews) setStatusOfNews;
+    mapping(string => ApprovedNews) public setStatusOfNews;
     // each news can have multiple voter and using each voters address we can access Voter
     mapping(string => mapping(address => Voter))
         public indivisualNewsVoterDecision;
@@ -71,7 +66,7 @@ contract NewsShield {
     ) public payable {
         require(msg.sender == _voter, "You have not participated in voting");
         require(
-            indivisualNewsVoterDecision[_id][_voter].voted == true,
+            indivisualNewsVoterDecision[_id][_voter].voted == false,
             "You have already voted"
         );
         require(
@@ -86,8 +81,7 @@ contract NewsShield {
         obj.voteChoice = _voteChoice;
         obj.voted = true;
         obj.stake = _stake;
-        // the staked money will be stored in contract
-        // payable(address(this)).transfer(_stake);
+     
         indivisualNewsVoterDecision[_id][_voter] = obj;
     }
 
@@ -95,7 +89,7 @@ contract NewsShield {
     // it will be called after time is over
     function decideVerdict(string memory _id) public payable {
         require(
-            block.timestamp - setStatusOfNews[_id].timeVotingStarted >= 5,
+            block.timestamp - setStatusOfNews[_id].timeVotingStarted >= 50,
             "Voting has not ended"
         );
 

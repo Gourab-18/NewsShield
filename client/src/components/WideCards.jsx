@@ -1,14 +1,13 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 
-export const WideCards = ({content}) => {
+export const WideCards = ({ value, content }) => {
+  console.log(value?.link);
   return (
     <>
       <div className="h-[40 vh] flex w-[40vw] flex-col     bg-[#111111]  ">
-        <div>
-          <img
-            className="h-[40 vh]  "
-            src="https://res.cloudinary.com/sambitsankalp/image/upload/v1660395461/hackathons/Hero_Section_twito_yz1ovz.png"
-          />
+        <div className="h-[40 vh]  ">
+          <img className="h-[40 vh] 	 " src={value?.link} />
         </div>
         <div className="">
           <button
